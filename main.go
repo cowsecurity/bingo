@@ -1,6 +1,7 @@
 package main
 
 import (
+	internal "bingo/internal"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -119,7 +120,7 @@ func (fc *FileChecker) CheckFile(path string) []Violation {
 
 	// Special check for .npmrc files
 	if filename == ".npmrc" {
-		if npmrcViolations, err := CheckNPMRC(path); err == nil {
+		if npmrcViolations, err := internal.CheckNPMRC(path); err == nil {
 			for _, v := range npmrcViolations {
 				violations = append(violations, Violation{
 					FilePath:    path,
@@ -181,9 +182,9 @@ func main() {
 
 	var files []string
 	if *checkAll {
-		files, err = GetAllTrackedFiles(repoPath)
+		files, err = internal.GetAllTrackedFiles(repoPath)
 	} else {
-		files, err = GetStagedFiles(repoPath)
+		files, err = internal.GetStagedFiles(repoPath)
 	}
 	if err != nil {
 		log.Fatalf("Error getting files to check: %v", err)
