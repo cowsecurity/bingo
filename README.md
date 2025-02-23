@@ -15,15 +15,9 @@ This is a Go port of [ban-sensitive-files](https://github.com/bahmutov/ban-sensi
 ## Installation
 
 ```bash
-go install github.com/cowsecurity/bingo@latest
-```
-
-Or build from source:
-
-```bash
 git clone https://github.com/cowsecurity/bingo.git
 cd bingo
-go build
+go install
 ```
 
 ## Usage
