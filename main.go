@@ -1,7 +1,6 @@
 package main
 
 import (
-	internal "bingo/internal"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -11,6 +10,8 @@ import (
 	"regexp"
 	"strings"
 	"sync"
+
+	internal "github.com/cowsecurity/bingo/internal"
 )
 
 // Rule represents a single pattern rule from git-deny-patterns.json
